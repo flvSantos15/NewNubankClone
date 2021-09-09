@@ -1,17 +1,23 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-
+import ModalUser from '../ModalUser/index'
 import { AntDesign, Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from './styles'
+import Modal from 'react-native-modal';
 
 const Header = () => {
   const [ isButtonEyeOpen, setIsButtonEyeOpen ] = useState(false)
   
-  const [ modalUserVisible, setModalUserVisible ] = useState(false)
+  const [ isModalUserVisible, setIsModalUserVisible ] = useState(false)
 
   const handleModalUserOpen = () => {
-    setModalUserVisible(true)
+    setIsModalUserVisible(true)
     console.log('Abrir modal')
+  }
+
+  const handleModalUserClose = () => {
+    setIsModalUserVisible(!isModalUserVisible)
+    alert('fechar modal')
   }
   
   const handleButtonClickEyeOpen = () => {
@@ -23,7 +29,7 @@ const Header = () => {
       <View style={styles.containerContent}>
 
         <TouchableOpacity style={styles.containerUser}>
-          <AntDesign name="user" size={24} color="#fff" onClick={handleModalUserOpen}/>
+          <AntDesign name="user" size={24} color="#fff" onClick={handleModalUserClose}/>
         </TouchableOpacity>
 
         <View style={styles.containerPlus}>
@@ -43,6 +49,21 @@ const Header = () => {
         </View>
       </View>
       <Text style={styles.containerText}>Olá, Flávio Santos</Text>
+
+      <View>
+        <Modal
+          isVisible={isModalUserVisible}
+          onRequestClose={handleModalUserClose}
+        >
+          <View>
+            <Text>Modal Opened</Text>
+            <TouchableOpacity>
+              <AntDesign name="close" size={24} color="black" onClick={handleModalUserClose}/>
+            </TouchableOpacity>
+                  
+          </View>
+        </Modal>
+      </View>
       
     </View>
   );

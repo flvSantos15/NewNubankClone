@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     height: '50px',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: '50%',
+    borderRadius: 50,
     backgroundColor: '#7407b5',
   },
   containerPlus: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   containerText: {
     color: '#fff',
-    fontSize: '18px',
+    fontSize: 18,
     fontWeight: 'bold',
   }
 })
