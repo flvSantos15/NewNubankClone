@@ -1,24 +1,24 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-native-modal';
 import { AntDesign, Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const ModalUser = () => {
-  const [ isModalUserVisible, setiSModalUserVisible ] = useState(false)
+  const [ isModalUserVisible, setIsModalUserVisible ] = useState(false)
 
   const handleModalUserOpen = () => {
-    setModalUserVisible(true)
+    setIsModalUserVisible(true)
     console.log('Abrir modal')
   }
 
   const handleModalUserClose = () => {
-    setModalUserVisible(false)
+    setIsModalUserVisible(false)
     console.log('fechar modal')
   }
   
-  return (
-    <View>
+   return (
+    <View style={{ flex: 1 }}>
       <Modal
-        isVisible={modalUserVisible}
+        isVisible={isModalUserVisible}
         onRequestClose={handleModalUserClose}
       >
         <View>
@@ -26,11 +26,10 @@ const ModalUser = () => {
           <TouchableOpacity>
             <AntDesign name="close" size={24} color="black" onClick={handleModalUserClose}/>
           </TouchableOpacity>
-                
         </View>
       </Modal>
-    </View>
-  );
+   </View>
+  )
 }
 
 export default ModalUser;
