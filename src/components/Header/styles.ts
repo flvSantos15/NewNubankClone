@@ -1,7 +1,11 @@
 import {StyleSheet} from 'react-native'
 
-const styles = StyleSheet.create({
+import {theme} from '../../global/theme'
+
+export const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    fontFamily: theme.fonts.title700,
     backgroundColor: '#7407e0',
     width: '100%',
     height: '130px',
