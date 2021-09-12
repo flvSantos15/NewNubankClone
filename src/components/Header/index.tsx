@@ -1,12 +1,17 @@
+import { StackNavigationProp } from '@react-navigation/stack'
 import React, {useState} from 'react';
-
 import {View, Text, TouchableOpacity} from 'react-native';
 import { AntDesign, Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 //import ModalUser from '../ModalUser/index'
+import { User } from '../User/index';
 
 import { styles } from './styles'
 
-export function Header(){
+interface HeaderProps {
+  
+}
+
+export function Header() {
   
   const [ isUserOpen, setIsUserOpen ] = useState(false)
 
