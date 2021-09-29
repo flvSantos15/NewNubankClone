@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.title700,
     backgroundColor: '#7407e0',
     width: '100%',
-    height: '130px',
+    height: '160px',
     flexDirection: 'column',
     padding: '14px'
   },
