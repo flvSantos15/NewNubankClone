@@ -1,26 +1,37 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Button } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
+
+import styles from './styles'
+import IconesArea from '../iconesArea';
 
 export default function Main(){
   return(
-    <View>
+    <View style={styles.container}>
       <View>
-        <View>
-          <Text>Conta</Text>
-          <AntDesign name="right" size={24} color="black" />
-        </View>
-        <View>
-          <Text>R$ 2.587,00</Text>
+        <View style={styles.containerAmount}>
+          <Text style={styles.containerAmountText}>Conta</Text>
+          <AntDesign name="right" size={20} color="black" />
         </View>
 
         <View>
-          <Text>Icones</Text>
+          <Text style={styles.AmountText}>R$ 2.587,00</Text>
         </View>
 
         <View>
-          <TouchableOpacity>
-            <Text>Meus cartões</Text>
+          {/*Aqui sera um componente*/}
+          <IconesArea />
+        </View>
+
+        <View>
+          <TouchableOpacity style={styles.btnCard}>
+            <AntDesign 
+              name="creditcard" 
+              size={24} 
+              color="black"
+              style={styles.btnCardCredit}
+            />
+            <Text style={styles.btnCardText}>Meus cartões</Text>
           </TouchableOpacity>
         </View>
       </View>
