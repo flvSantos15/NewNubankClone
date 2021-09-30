@@ -3,9 +3,7 @@ import {SafeAreaView} from 'react-native';
 import { Header } from '../../components/Header/index'
 import Main from '../../components/Main';
 
-interface HomeProps {}
-
-export function Home({}: HomeProps){
+export function Home(){
   return (
     <SafeAreaView>
       <Header />
